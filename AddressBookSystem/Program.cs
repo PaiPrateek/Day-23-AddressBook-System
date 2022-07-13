@@ -10,7 +10,10 @@ namespace AddressBookSystem
             Console.WriteLine("\n");
 
             //Creating the Contact
-            AddressBook.createContact();
+            //AddressBook.createContact();
+
+            //Adding New Contact
+            AddressBook.AddNewContact();
         }
     }
 }
