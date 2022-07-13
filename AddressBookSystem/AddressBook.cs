@@ -61,38 +61,52 @@ namespace AddressBookSystem
             Console.Write("Enter First Name: ");
             person.FirstName = Console.ReadLine();
 
-            Console.Write("Enter Last Name: ");
-            person.LastName = Console.ReadLine();
+            //checkduplicateEntry();
+            List<Contact> checkDuplicate = AddressDetails.FindAll(x => (x.FirstName == person.FirstName));
+            {
+                if (checkDuplicate.Count == 0)
+                {
+                    Console.Write("Enter Last Name: ");
+                    person.LastName = Console.ReadLine();
 
-            Console.Write("Enter Address : ");
-            person.Address = Console.ReadLine();
+                    Console.Write("Enter Address : ");
+                    person.Address = Console.ReadLine();
 
-            Console.Write("Enter City: ");
-            person.City = Console.ReadLine();
+                    Console.Write("Enter City: ");
+                    person.City = Console.ReadLine();
 
-            Console.Write("Enter State: ");
-            person.State = Console.ReadLine();
+                    Console.Write("Enter State: ");
+                    person.State = Console.ReadLine();
 
-            Console.Write("Enter Zip Code: ");
-            person.ZipCode = int.Parse(Console.ReadLine());
+                    Console.Write("Enter Zip Code: ");
+                    person.ZipCode = int.Parse(Console.ReadLine());
 
-            Console.Write("Enter Mobile Number: ");
-            person.MobileNumber = long.Parse(Console.ReadLine());
+                    Console.Write("Enter Mobile Number: ");
+                    person.MobileNumber = long.Parse(Console.ReadLine());
 
-            Console.Write("Enter E-Mail: ");
-            person.Email = Console.ReadLine();
+                    Console.Write("Enter E-Mail: ");
+                    person.Email = Console.ReadLine();
 
-            Console.WriteLine("\n************************************\n");
-            PrintContact(person);
-            Console.WriteLine("\n************************************\n");
+                    Console.WriteLine("\n************************************\n");
+                    PrintContact(person);
+                    Console.WriteLine("\n************************************\n");
 
-            //Adding Contact into AddressBook
-            AddressDetails.Add(person);
+                    //Adding Contact into AddressBook
+                    AddressDetails.Add(person);
 
-            //Adding Unique name to the Address Book
-            Console.WriteLine("\nEnter Name of the Contact details to Store in the Address Book\n");
-            string DairyName = Console.ReadLine();
-            Dairy.Add(DairyName, person);
+                    //Adding Unique name to the Address Book
+                    Console.WriteLine("\nEnter Name of the Contact details to Store in the Address Book\n");
+                    string DairyName = Console.ReadLine();
+                    Dairy.Add(DairyName, person);
+                }
+                else
+                {
+                    Console.WriteLine("\n************************************\n");
+                    Console.WriteLine("\nThe Entered Person Name is already exist in the Address Book");
+                    Console.WriteLine("\n************************************\n");
+                }
+            }
+
         }
 
         // Creating the method for editing the existing contact
