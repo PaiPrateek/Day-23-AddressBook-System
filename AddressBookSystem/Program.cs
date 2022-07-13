@@ -2,11 +2,15 @@
 
 namespace AddressBookSystem
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Address Book Program");
+            Console.WriteLine("\n");
+
+            //Creating the Contact
+            AddressBook.createContact();
         }
     }
 }
