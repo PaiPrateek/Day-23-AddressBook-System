@@ -54,7 +54,8 @@ namespace AddressBookSystem
             Console.WriteLine("Mobile Number :" + person.MobileNumber);
             Console.WriteLine("E-Mail :" + person.Email);
         }
-        // /Creating the method for Adding new contact
+
+        // Creating the method for Adding new contact
         public static void AddNewContact()
         {
             Console.Write("Enter First Name: ");
@@ -85,6 +86,7 @@ namespace AddressBookSystem
             PrintContact(person);
             Console.WriteLine("\n************************************\n");
 
+            //Adding Contact into AddressBook
             AddressDetails.Add(person);
         }
 
@@ -145,6 +147,27 @@ namespace AddressBookSystem
                 AddressDetails.Remove(person);
                 Console.WriteLine("\nPerson removed\n");
             }
+        }
+
+        //List of People Method
+        public static void ListOfContact()
+        {
+            if (AddressDetails.Count == 0)
+            {
+                Console.WriteLine("Address Book is empty. Press any key to continue.");
+                Console.ReadKey();
+                return;
+            }
+            Console.WriteLine("\nCurrent Contacts in Address Book:\n");
+            foreach (var person in AddressDetails)
+            {
+                Console.WriteLine("\n************************************\n");
+                PrintContact(person);
+                Console.WriteLine("\n************************************\n");
+            }
+
+            Console.WriteLine("\nPress any key to continue.");
+            Console.ReadKey();
         }
     }
 }
