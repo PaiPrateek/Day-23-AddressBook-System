@@ -14,6 +14,7 @@ namespace AddressBookSystem
 
             //Adding New Contact
             AddressBook.AddNewContact();
+            AddressBook.EditExistingContact();
         }
     }
 }
