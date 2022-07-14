@@ -28,7 +28,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 6 to Search person in City in AddressBook");
                 Console.WriteLine("\nEnter 7 to Search person in State in AddressBook");
                 Console.WriteLine("\nEnter 8 to To get the list of persons belongs to same city in Address Book");
-                Console.WriteLine("\nEnter 9 to To get the list of persons belongs to same State in Address Book"); ;
+                Console.WriteLine("\nEnter 9 to To get the list of persons belongs to same State in Address Book");
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
