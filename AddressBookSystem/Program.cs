@@ -25,7 +25,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 3 to Delete the Person using Person's Name in AddressBook");
                 Console.WriteLine("\nEnter 4 to Get List of Contact in AddressBook");
                 Console.WriteLine("\nEnter 5 to Get List of Address Book in AddressBook");
-                Console.WriteLine("\nEnter 6 to Check Duplicate entry inAddressBook");
+                
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)

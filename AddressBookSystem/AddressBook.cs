@@ -14,7 +14,7 @@ namespace AddressBookSystem
         // Creating the dictionary to save the Multiple conatact in Addressbook
         public static Dictionary<string, Contact> Dairy = new Dictionary<string, Contact>();
 
-        public static Contact person = new Contact();
+        //public static Contact person = new Contact();
 
         //Creating the method for creating the contact
         public static void createContact()
@@ -58,6 +58,7 @@ namespace AddressBookSystem
         // Creating the method for Adding new contact
         public static void AddNewContact()
         {
+            Contact person = new Contact();
             Console.Write("Enter First Name: ");
             person.FirstName = Console.ReadLine();
 
@@ -161,7 +162,7 @@ namespace AddressBookSystem
             Console.WriteLine("Are you sure you want to remove this person from your address book? (Y/N)");
             string d = Console.ReadLine().ToLower();
 
-            if (d=="y")
+            if (d == "y")
             {
                 AddressDetails.Remove(person);
                 Console.WriteLine("\nPerson removed\n");
@@ -191,21 +192,22 @@ namespace AddressBookSystem
         //Creating the method for displyang the multiple address Book
         public static void AddressBookNames()
         {
-            if(Dairy.Count==0)
+            if (Dairy.Count == 0)
             {
                 Console.WriteLine("Address Book is empty. Press any key to continue.");
                 Console.ReadKey();
                 return;
             }
             Console.WriteLine("List of Address Book");
-            foreach(KeyValuePair<string, Contact> dairy in Dairy)
+            foreach (KeyValuePair<string, Contact> dairy in Dairy)
             {
-                
-                Console.WriteLine("Address Book Name : {0} - Details {1}",dairy.Key,dairy.Value);
+
+                Console.WriteLine("Address Book Name : {0} - Details {1}", dairy.Key, dairy.Value);
                 Console.WriteLine("\n************************************\n");
                 PrintContact(dairy.Value);
                 Console.WriteLine("\n************************************\n");
             }
         }
+
     }
 }
