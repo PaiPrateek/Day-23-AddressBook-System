@@ -14,7 +14,7 @@ namespace AddressBookSystem
         // Creating the dictionary to save the Multiple conatact in Addressbook
         public static Dictionary<string, Contact> Dairy = new Dictionary<string, Contact>();
 
-        public static Contact person = new Contact();
+        //public static Contact person = new Contact();
 
         //Creating the method for creating the contact
         public static void createContact()
@@ -58,6 +58,7 @@ namespace AddressBookSystem
         // Creating the method for Adding new contact
         public static void AddNewContact()
         {
+            Contact person = new Contact();
             Console.Write("Enter First Name: ");
             person.FirstName = Console.ReadLine();
 
@@ -205,6 +206,50 @@ namespace AddressBookSystem
                 Console.WriteLine("\n************************************\n");
                 PrintContact(dairy.Value);
                 Console.WriteLine("\n************************************\n");
+            }
+        }
+
+        //Serch the person by city name
+        public static void SearchPersonInCity()
+        {
+            Console.WriteLine("Please enter the city name to search person: ");
+            string city = Console.ReadLine();
+            List<Contact> checkCity = AddressDetails.FindAll(x => (x.City == city));
+
+            //Checking for Availability
+            if (checkCity.Count == 0)
+            {
+                Console.WriteLine("No person found in the given City");
+            }
+            else
+            {
+                Console.WriteLine("Person details are: ");
+                foreach (Contact contact in checkCity)
+                {
+                    Console.WriteLine("\nFirst Name is: " + contact.FirstName);
+                }
+            }
+        }
+
+        //Serch the person by city name
+        public static void SearchPersonInState()
+        {
+            Console.WriteLine("Please enter the State name to search person: ");
+            string state = Console.ReadLine();
+            List<Contact> checkState= AddressDetails.FindAll(x => (x.State == state));
+
+            //Checking for Availability
+            if (checkState.Count == 0)
+            {
+                Console.WriteLine("No person found in the given State");
+            }
+            else
+            {
+                Console.WriteLine("Person details are: ");
+                foreach (Contact contact in checkState)
+                {
+                    Console.WriteLine("\nFirst Name is: " + contact.FirstName);
+                }
             }
         }
     }
