@@ -25,12 +25,10 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 3 to Delete the Person using Person's Name in AddressBook");
                 Console.WriteLine("\nEnter 4 to Get List of Contact in AddressBook");
                 Console.WriteLine("\nEnter 5 to Get List of Address Book in AddressBook");
-<<<<<<< HEAD
-                
-=======
                 Console.WriteLine("\nEnter 6 to Search person in City in AddressBook");
                 Console.WriteLine("\nEnter 7 to Search person in State in AddressBook");
->>>>>>> UC8
+                Console.WriteLine("\nEnter 8 to To get the list of persons belongs to same city in Address Book");
+                Console.WriteLine("\nEnter 9 to To get the list of persons belongs to same State in Address Book"); ;
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -55,6 +53,12 @@ namespace AddressBookSystem
                         break;
                     case 7:
                         AddressBook.SearchPersonInState(); //Search person in State
+                        break;
+                    case 8:
+                        AddressBook.ListOfPersonsofSameCity(); //List of Persons belongs to same city
+                        break;
+                    case 9:
+                        AddressBook.ListOfPersonsofSameState(); //List of Persons belongs to same state
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");
