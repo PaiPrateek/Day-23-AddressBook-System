@@ -285,5 +285,22 @@ namespace AddressBookSystem
                 Console.WriteLine("\n************************************\n");
             }
         }
+        //Count the persons by City
+        public static void CountByCity()
+        {
+            Console.WriteLine("Please enter the city : ");
+            string city = Console.ReadLine();
+            List<Contact> checkCity = AddressDetails.FindAll(x => (x.City == city));
+            Console.WriteLine("Number of Persons in the State {0} is {1}", city, checkCity.Count);
+        }
+
+        //Count the persons by State
+        public static void CountByState()
+        {
+            Console.WriteLine("Please enter the State : ");
+            string state = Console.ReadLine();
+            List<Contact> checkState = AddressDetails.FindAll(x => (x.State == state));
+            Console.WriteLine("Number of Persons in the State {0} is {1}",state,checkState.Count);
+        }
     }
 }
