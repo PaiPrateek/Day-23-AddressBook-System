@@ -311,5 +311,35 @@ namespace AddressBookSystem
                 Console.WriteLine(Contact.FirstName);
             }
         }
+
+        //Sort the entries in addressbook by city
+        public static void SortByCity()
+        {
+            List<Contact> SortbyCity = AddressDetails.OrderBy(x => x.City).ToList();
+            foreach (Contact city in SortbyCity)
+            {
+                Console.WriteLine(city.City);
+            }
+        }
+
+        //Sort the entries in addressbook by state
+        public static void SortByState()
+        {
+            List<Contact> SortbyState = AddressDetails.OrderBy(x => x.State).ToList();
+            foreach (Contact state in SortbyState)
+            {
+                Console.WriteLine(state.State);
+            }
+        }
+
+        //Sort the entries in addressbook by Zipcode
+        public static void SortByZipCode()
+        {
+            List<Contact> Sortbyzipcode = AddressDetails.OrderBy(x => x.ZipCode).ToList();
+            foreach (Contact code in Sortbyzipcode)
+            {
+                Console.WriteLine(code.ZipCode);
+            }
+        }
     }
 }

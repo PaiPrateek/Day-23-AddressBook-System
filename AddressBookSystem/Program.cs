@@ -32,6 +32,10 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 10 to To get the Number of persons belongs to same city in Address Book");
                 Console.WriteLine("\nEnter 11 to To get the Number of persons belongs to same State in Address Book");
                 Console.WriteLine("\nEnter 12 to To get the List of entries in address book sorted by Persons Name in Address Book");
+                Console.WriteLine("\nEnter 13 to To get the List of entries in address book sorted by City in Address Book");
+                Console.WriteLine("\nEnter 14 to To get the List of entries in address book sorted by State in Address Book");
+                Console.WriteLine("\nEnter 15 to To get the List of entries in address book sorted by Zip Code in Address Book");
+
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -71,6 +75,15 @@ namespace AddressBookSystem
                         break;
                     case 12:
                         AddressBook.SortByPersonsName(); //Sort the entries in Addressbook by persons name
+                        break;
+                    case 13:
+                        AddressBook.SortByCity(); //Sort the entries in Addressbook by City
+                        break;
+                    case 14:
+                        AddressBook.SortByState(); //Sort the entries in Addressbook by State
+                        break;
+                    case 15:
+                        AddressBook.SortByZipCode(); //Sort the entries in Addressbook by Zip Code
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");
