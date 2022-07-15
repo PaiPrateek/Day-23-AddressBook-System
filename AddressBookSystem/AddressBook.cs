@@ -302,5 +302,14 @@ namespace AddressBookSystem
             List<Contact> checkState = AddressDetails.FindAll(x => (x.State == state));
             Console.WriteLine("Number of Persons in the State {0} is {1}",state,checkState.Count);
         }
+        //Sort the entries in addressbook by persons name
+        public static void SortByPersonsName()
+        {
+            List<Contact> SortbyPerson = AddressDetails.OrderBy(x => x.FirstName).ToList();
+            foreach (Contact Contact in SortbyPerson)
+            {
+                Console.WriteLine(Contact.FirstName);
+            }
+        }
     }
 }
