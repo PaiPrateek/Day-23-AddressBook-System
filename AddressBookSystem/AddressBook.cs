@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -340,6 +341,30 @@ namespace AddressBookSystem
             {
                 Console.WriteLine(code.ZipCode);
             }
+        }
+
+        //Write the Persons details in AddtressBook to Tex file And read from the person details from TextFile.
+        public static void WriteAddressbookintoTextFile()
+        {
+            string path = @"D:\LFP 158\Assignment\Day 23\AddressBookSystem\AddressBookSystem\AddressBook.txt";
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                foreach(Contact person in AddressDetails)
+                {
+                    sw.WriteLine("First Name : " + person.FirstName + "\n" +
+                        "Last Name : " + person.LastName + "\n" +
+                        "Address : " + person.Address + "\n" +
+                        "City : " + person.City + "\n" +
+                        "State : " + person.State + "\n" +
+                        "Zip Code: " + person.ZipCode + "\n" +
+                        "Mobile Number : " + person.MobileNumber + "\n" +
+                        "Email : " + person.Email);
+                    sw.Close();
+                    Console.WriteLine(File.ReadAllText(path));
+                    Console.WriteLine("Person details are successfully Exported to Text File");
+                }
+                Console.ReadKey();
+            }           
         }
     }
 }

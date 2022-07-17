@@ -35,6 +35,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 13 to To get the List of entries in address book sorted by City in Address Book");
                 Console.WriteLine("\nEnter 14 to To get the List of entries in address book sorted by State in Address Book");
                 Console.WriteLine("\nEnter 15 to To get the List of entries in address book sorted by Zip Code in Address Book");
+                Console.WriteLine("\nEnter 16 to To Export the Person details from AddressBook to Text File");
 
                 int choice = int.Parse(Console.ReadLine());
 
@@ -84,6 +85,9 @@ namespace AddressBookSystem
                         break;
                     case 15:
                         AddressBook.SortByZipCode(); //Sort the entries in Addressbook by Zip Code
+                        break;
+                    case 16:
+                        AddressBook.WriteAddressbookintoTextFile(); //Write the Persons details in AddtressBook to Tex file And read from the person details from TextFile.
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");
