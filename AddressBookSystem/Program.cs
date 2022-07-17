@@ -38,6 +38,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 15 to To get the List of entries in address book sorted by Zip Code in Address Book");
                 Console.WriteLine("\nEnter 16 to To Export the Person details from AddressBook to Text File");
                 Console.WriteLine("\nEnter 17 to To Export the Person details from AddressBook to CSV File");
+                Console.WriteLine("\nEnter 18 to To Export the Person details from AddressBook to JSON File");
 
                 int choice = int.Parse(Console.ReadLine());
 
@@ -93,6 +94,9 @@ namespace AddressBookSystem
                         break;
                     case 17:
                         AddressBook.WriteAddressbookintoCSVFile(); //Write the Persons details in AddtressBook to CSV file And read from the person details from CSV File.
+                        break;
+                    case 18:
+                        AddressBook.WriteAddressbookintoJSONFile(); //Write the Persons details in AddtressBook to CSV file And read from the person details from JSON File.
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");

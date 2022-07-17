@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -104,9 +105,9 @@ namespace AddressBookSystem
                     AddressDetails.Add(person);
 
                     //Adding Unique name to the Address Book
-                    //Console.WriteLine("\nEnter Name of the Contact details to Store in the Address Book\n");
-                    //string DairyName = Console.ReadLine();
-                    //Dairy.Add(DairyName, person);
+                    Console.WriteLine("\nEnter Name of the Contact details to Store in the Address Book\n");
+                    string DairyName = Console.ReadLine();
+                    Dairy.Add(DairyName, person);
                 }
                 else
                 {
@@ -345,7 +346,7 @@ namespace AddressBookSystem
             }
         }
 
-        //Write the Persons details in AddtressBook to Tex file And read from the person details from TextFile.
+        //Write the Persons details in AddtressBook to Text file And read from the person details from Text File.
         public static void WriteAddressbookintoTextFile()
         {
             string path = @"D:\LFP 158\Assignment\Day 23\AddressBookSystem\AddressBookSystem\AddressBook.txt";
@@ -368,7 +369,7 @@ namespace AddressBookSystem
                 Console.ReadKey();
             }
         }
-
+        //Write the Persons details in AddtressBook to CSV file And read from the person details from CSV File.
         public static void WriteAddressbookintoCSVFile()
         {
             string path = @"D:\LFP 158\Assignment\Day 23\AddressBookSystem\AddressBookSystem\AddressBook.csv";
@@ -397,6 +398,29 @@ namespace AddressBookSystem
                         "Mobile Number : " + person.MobileNumber + "\n" +
                         "Email : " + person.Email);
                 }
+            }
+        }
+
+        //Write the Persons details in AddtressBook to CSV file And read from the person details from JSON File.
+        public static void WriteAddressbookintoJSONFile()
+        {
+            string path = @"D:\LFP 158\Assignment\Day 23\AddressBookSystem\AddressBookSystem\AddressBook.json";
+
+            Console.WriteLine("********* Reading the File and Write to JSON File **********");
+
+            //Writing the User data in to JSON file
+            JsonSerializer jsonSerializer = new JsonSerializer();
+            using (StreamWriter sw = new StreamWriter(path))
+            using (JsonWriter Write = new JsonTextWriter(sw))
+            {
+                jsonSerializer.Serialize(Write,AddressDetails);
+            }
+            using (StreamReader sr = new StreamReader(path))
+            using (JsonReader Read = new JsonTextReader(sr))
+            {
+                //Reading the user data from JSON file
+                string json = sr.ReadToEnd();
+                var result  = jsonSerializer.Deserialize(Read);
             }
         }
     }
