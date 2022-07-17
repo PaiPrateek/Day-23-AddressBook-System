@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -102,9 +104,9 @@ namespace AddressBookSystem
                     AddressDetails.Add(person);
 
                     //Adding Unique name to the Address Book
-                    Console.WriteLine("\nEnter Name of the Contact details to Store in the Address Book\n");
-                    string DairyName = Console.ReadLine();
-                    Dairy.Add(DairyName, person);
+                    //Console.WriteLine("\nEnter Name of the Contact details to Store in the Address Book\n");
+                    //string DairyName = Console.ReadLine();
+                    //Dairy.Add(DairyName, person);
                 }
                 else
                 {
@@ -242,7 +244,7 @@ namespace AddressBookSystem
         {
             Console.WriteLine("Please enter the State name to search person: ");
             string state = Console.ReadLine();
-            List<Contact> checkState= AddressDetails.FindAll(x => (x.State == state));
+            List<Contact> checkState = AddressDetails.FindAll(x => (x.State == state));
 
             //Checking for Availability
             if (checkState.Count == 0)
@@ -301,7 +303,7 @@ namespace AddressBookSystem
             Console.WriteLine("Please enter the State : ");
             string state = Console.ReadLine();
             List<Contact> checkState = AddressDetails.FindAll(x => (x.State == state));
-            Console.WriteLine("Number of Persons in the State {0} is {1}",state,checkState.Count);
+            Console.WriteLine("Number of Persons in the State {0} is {1}", state, checkState.Count);
         }
         //Sort the entries in addressbook by persons name
         public static void SortByPersonsName()
@@ -349,7 +351,7 @@ namespace AddressBookSystem
             string path = @"D:\LFP 158\Assignment\Day 23\AddressBookSystem\AddressBookSystem\AddressBook.txt";
             using (StreamWriter sw = new StreamWriter(path))
             {
-                foreach(Contact person in AddressDetails)
+                foreach (Contact person in AddressDetails)
                 {
                     sw.WriteLine("First Name : " + person.FirstName + "\n" +
                         "Last Name : " + person.LastName + "\n" +
@@ -364,7 +366,38 @@ namespace AddressBookSystem
                     Console.WriteLine("Person details are successfully Exported to Text File");
                 }
                 Console.ReadKey();
-            }           
+            }
+        }
+
+        public static void WriteAddressbookintoCSVFile()
+        {
+            string path = @"D:\LFP 158\Assignment\Day 23\AddressBookSystem\AddressBookSystem\AddressBook.csv";
+
+            Console.WriteLine("********* Reading the File and Write to CSV File **********");
+
+            //Writing the User data in to CSV file
+            using (StreamWriter sw = new StreamWriter(path))
+            using (CsvWriter csvWrite = new CsvWriter(sw, CultureInfo.InvariantCulture))
+            {
+                csvWrite.WriteRecords(AddressDetails);
+            }
+            using (StreamReader sr = new StreamReader(path))
+            using (CsvReader csvRead = new CsvReader(sr, CultureInfo.InvariantCulture))
+            {
+                //Reading the user data from CSV file
+                var result = csvRead.GetRecords<Contact>().ToList();
+                foreach (Contact person in AddressDetails)
+                {
+                    Console.WriteLine("First Name : " + person.FirstName + "\n" +
+                        "Last Name : " + person.LastName + "\n" +
+                        "Address : " + person.Address + "\n" +
+                        "City : " + person.City + "\n" +
+                        "State : " + person.State + "\n" +
+                        "Zip Code: " + person.ZipCode + "\n" +
+                        "Mobile Number : " + person.MobileNumber + "\n" +
+                        "Email : " + person.Email);
+                }
+            }
         }
     }
 }

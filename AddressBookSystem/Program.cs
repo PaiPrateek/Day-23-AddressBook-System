@@ -9,6 +9,7 @@ namespace AddressBookSystem
             Console.WriteLine("Welcome to Address Book Program");
             Console.WriteLine("\n");
 
+
             //Creating the Contact
             //AddressBook.createContact();
 
@@ -36,6 +37,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 14 to To get the List of entries in address book sorted by State in Address Book");
                 Console.WriteLine("\nEnter 15 to To get the List of entries in address book sorted by Zip Code in Address Book");
                 Console.WriteLine("\nEnter 16 to To Export the Person details from AddressBook to Text File");
+                Console.WriteLine("\nEnter 17 to To Export the Person details from AddressBook to CSV File");
 
                 int choice = int.Parse(Console.ReadLine());
 
@@ -88,6 +90,9 @@ namespace AddressBookSystem
                         break;
                     case 16:
                         AddressBook.WriteAddressbookintoTextFile(); //Write the Persons details in AddtressBook to Tex file And read from the person details from TextFile.
+                        break;
+                    case 17:
+                        AddressBook.WriteAddressbookintoCSVFile(); //Write the Persons details in AddtressBook to CSV file And read from the person details from CSV File.
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");
