@@ -110,3 +110,17 @@ select * from AddressBook
 go
 
 exec GetAllDetails
+
+--Add new field to database
+ALTER TABLE AddressBook ADD date_added date
+
+--Add person to both Friend and Family
+update AddressBook SET date_added ='2012-11-04'  where FirstName = 'Prateek'
+update AddressBook SET date_added ='2014-08-28'  where FirstName = 'Prateeksha'
+update AddressBook SET date_added ='2002-04-30'  where FirstName = 'Vasanth'
+update AddressBook SET date_added = '2005-10-30' where FirstName = 'Geetha'
+update AddressBook SET date_added = '2010-07-19' where FirstName = 'Ramanath'
+update AddressBook SET date_added = '2008-05-02' where FirstName = 'Akshay'
+
+select FirstName FROM AddressBook
+WHERE date_added BETWEEN CAST('2000-01-01' As date) AND CAST('2010-01-01' As date)

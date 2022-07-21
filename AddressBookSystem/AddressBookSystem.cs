@@ -76,5 +76,26 @@ namespace AddressBookSystem
             Console.WriteLine("Updated the data Successfully");
             Console.ReadKey();
         }
+
+        //Retrieve all the contacts from the database were added in a perticular period
+        public static void RetrieveContactsFromDatabaseInPerticularPeriod()
+        {
+            var SQL = @$"select FirstName FROM AddressBook WHERE date_added BETWEEN CAST('2000-01-01' As date) AND CAST('2010-01-01' As date)";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=Address_Book_Service;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Console.WriteLine("List of Contacts added in the given period of time is {0}", reader["FirstName"]);
+                }
+                reader.Close();
+            };
+            Console.ReadKey();
+        }
     }
 }

@@ -41,6 +41,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 18 to To Export the Person details from AddressBook to JSON File");
                 Console.WriteLine("\nEnter 19 to To Retrieve the employee payroll from SQL database");
                 Console.WriteLine("\nEnter 20 to To Update the Contact information in the address Book for a person");
+                Console.WriteLine("\nEnter 21 to To Retrieve the contacts from the database were added in a perticular period");
 
                 int choice = int.Parse(Console.ReadLine());
 
@@ -105,6 +106,9 @@ namespace AddressBookSystem
                         break;
                     case 20:
                         AddressBookSystem.UpdateContactInformationOfPersoninAddressBook(); //Update the Contact information in the address Book for a person 
+                        break;
+                    case 21:
+                        AddressBookSystem.RetrieveContactsFromDatabaseInPerticularPeriod();  //Retrieve all the contacts from the database were added in a perticular period
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");
