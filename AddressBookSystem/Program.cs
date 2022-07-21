@@ -40,6 +40,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 17 to To Export the Person details from AddressBook to CSV File");
                 Console.WriteLine("\nEnter 18 to To Export the Person details from AddressBook to JSON File");
                 Console.WriteLine("\nEnter 19 to To Retrieve the employee payroll from SQL database");
+                Console.WriteLine("\nEnter 20 to To Update the Contact information in the address Book for a person");
 
                 int choice = int.Parse(Console.ReadLine());
 
@@ -101,6 +102,9 @@ namespace AddressBookSystem
                         break;
                     case 19:
                         AddressBookSystem.RetrieveEmployeePayrollFromDataBase(); //Retrieve the employee payroll from  database
+                        break;
+                    case 20:
+                        AddressBookSystem.UpdateContactInformationOfPersoninAddressBook(); //Update the Contact information in the address Book for a person 
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");

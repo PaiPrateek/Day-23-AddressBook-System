@@ -62,5 +62,19 @@ namespace AddressBookSystem
                 connection.Close();
             }
         }
+
+        //Update the Contact information in the address Book for a person 
+        public static void UpdateContactInformationOfPersoninAddressBook()
+        {
+            var SQL = @$"UPDATE AddressBook set PhoneNumber  = '8762265775' where FirstName = 'Prateek'";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=Address_Book_Service;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+            int reader = cmd.ExecuteNonQuery();
+            Console.WriteLine(reader);
+            Console.WriteLine("Updated the data Successfully");
+            Console.ReadKey();
+        }
     }
 }
