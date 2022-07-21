@@ -44,6 +44,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 21 to Retrieve the contacts from the database were added in a perticular period");
                 Console.WriteLine("\nEnter 22 to Retrieve Number Contacts in AddressBok by City");
                 Console.WriteLine("\nEnter 23 to Retrieve Number Contacts in AddressBok by State");
+                Console.WriteLine("\nEnter 24 to Add New Contact information in the address Book");
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -116,6 +117,9 @@ namespace AddressBookSystem
                         break;
                     case 23:
                         AddressBookSystem.CountOfContactsInAddressBookByState();  //Retrieve Number Contacts in AddressBok by State
+                        break;
+                    case 24:
+                        AddressBookSystem.AddNewContactInformationOfPersoninAddressBook(); //Add New Contact information in the address Book
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");

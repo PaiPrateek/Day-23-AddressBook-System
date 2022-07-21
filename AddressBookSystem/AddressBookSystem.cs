@@ -125,5 +125,19 @@ namespace AddressBookSystem
             Console.WriteLine("Number Contacts in AddressBok by State : " + reader); ;
             Console.ReadKey();
         }
+
+        //Add New Contact information in the address Book
+        public static void AddNewContactInformationOfPersoninAddressBook() //UC20
+        {
+            var SQL = @$"INSERT INTO AddressBook Values ('Vishwanath','Naidu','Tirupathi','Tirupathi', 'Andra Padesh','517507','9913372185','vishwa@gmail.com', 'Vishwa', 3, '2020-06-06')";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=Address_Book_Service;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+            int reader = cmd.ExecuteNonQuery();
+            Console.WriteLine(reader);
+            Console.WriteLine("New contact added Successfully");
+            Console.ReadKey();
+        }
     }
 }
