@@ -97,5 +97,33 @@ namespace AddressBookSystem
             };
             Console.ReadKey();
         }
+
+        //Retrieve Number Contacts in AddressBok by City
+        public static void CountOfContactsInAddressBookByCity()
+        {
+            var SQL = @$"select COUNT(City) FROM AddressBook";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=Address_Book_Service;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+
+            int reader = (int)cmd.ExecuteScalar();
+            Console.WriteLine("Number Contacts in AddressBok by City : " + reader); ;
+            Console.ReadKey();
+        }
+
+        //Retrieve Number Contacts in AddressBok by State 
+        public static void CountOfContactsInAddressBookByState() 
+        {
+            var SQL = @$"select COUNT(State) FROM AddressBook";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=Address_Book_Service;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+
+            int reader = (int)cmd.ExecuteScalar();
+            Console.WriteLine("Number Contacts in AddressBok by State : " + reader); ;
+            Console.ReadKey();
+        }
     }
 }

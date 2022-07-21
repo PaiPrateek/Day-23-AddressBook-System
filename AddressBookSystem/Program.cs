@@ -28,21 +28,22 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 5 to Get List of Address Book in AddressBook");
                 Console.WriteLine("\nEnter 6 to Search person in City in AddressBook");
                 Console.WriteLine("\nEnter 7 to Search person in State in AddressBook");
-                Console.WriteLine("\nEnter 8 to To get the list of persons belongs to same city in Address Book");
-                Console.WriteLine("\nEnter 9 to To get the list of persons belongs to same State in Address Book");
-                Console.WriteLine("\nEnter 10 to To get the Number of persons belongs to same city in Address Book");
-                Console.WriteLine("\nEnter 11 to To get the Number of persons belongs to same State in Address Book");
-                Console.WriteLine("\nEnter 12 to To get the List of entries in address book sorted by Persons Name in Address Book");
-                Console.WriteLine("\nEnter 13 to To get the List of entries in address book sorted by City in Address Book");
-                Console.WriteLine("\nEnter 14 to To get the List of entries in address book sorted by State in Address Book");
-                Console.WriteLine("\nEnter 15 to To get the List of entries in address book sorted by Zip Code in Address Book");
-                Console.WriteLine("\nEnter 16 to To Export the Person details from AddressBook to Text File");
-                Console.WriteLine("\nEnter 17 to To Export the Person details from AddressBook to CSV File");
-                Console.WriteLine("\nEnter 18 to To Export the Person details from AddressBook to JSON File");
-                Console.WriteLine("\nEnter 19 to To Retrieve the employee payroll from SQL database");
-                Console.WriteLine("\nEnter 20 to To Update the Contact information in the address Book for a person");
-                Console.WriteLine("\nEnter 21 to To Retrieve the contacts from the database were added in a perticular period");
-
+                Console.WriteLine("\nEnter 8 to get the list of persons belongs to same city in Address Book");
+                Console.WriteLine("\nEnter 9 to get the list of persons belongs to same State in Address Book");
+                Console.WriteLine("\nEnter 10 to get the Number of persons belongs to same city in Address Book");
+                Console.WriteLine("\nEnter 11 to get the Number of persons belongs to same State in Address Book");
+                Console.WriteLine("\nEnter 12 to get the List of entries in address book sorted by Persons Name in Address Book");
+                Console.WriteLine("\nEnter 13 to get the List of entries in address book sorted by City in Address Book");
+                Console.WriteLine("\nEnter 14 to get the List of entries in address book sorted by State in Address Book");
+                Console.WriteLine("\nEnter 15 to get the List of entries in address book sorted by Zip Code in Address Book");
+                Console.WriteLine("\nEnter 16 to Export the Person details from AddressBook to Text File");
+                Console.WriteLine("\nEnter 17 to Export the Person details from AddressBook to CSV File");
+                Console.WriteLine("\nEnter 18 to Export the Person details from AddressBook to JSON File");
+                Console.WriteLine("\nEnter 19 to Retrieve the employee payroll from SQL database");
+                Console.WriteLine("\nEnter 20 to Update the Contact information in the address Book for a person");
+                Console.WriteLine("\nEnter 21 to Retrieve the contacts from the database were added in a perticular period");
+                Console.WriteLine("\nEnter 22 to Retrieve Number Contacts in AddressBok by City");
+                Console.WriteLine("\nEnter 23 to Retrieve Number Contacts in AddressBok by State");
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -109,6 +110,12 @@ namespace AddressBookSystem
                         break;
                     case 21:
                         AddressBookSystem.RetrieveContactsFromDatabaseInPerticularPeriod();  //Retrieve all the contacts from the database were added in a perticular period
+                        break;
+                    case 22:
+                        AddressBookSystem.CountOfContactsInAddressBookByCity(); //Retrieve Number Contacts in AddressBok by City
+                        break;
+                    case 23:
+                        AddressBookSystem.CountOfContactsInAddressBookByState();  //Retrieve Number Contacts in AddressBok by State
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");

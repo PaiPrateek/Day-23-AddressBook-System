@@ -122,5 +122,3 @@ update AddressBook SET date_added = '2005-10-30' where FirstName = 'Geetha'
 update AddressBook SET date_added = '2010-07-19' where FirstName = 'Ramanath'
 update AddressBook SET date_added = '2008-05-02' where FirstName = 'Akshay'
 
-select FirstName FROM AddressBook
-WHERE date_added BETWEEN CAST('2000-01-01' As date) AND CAST('2010-01-01' As date)
