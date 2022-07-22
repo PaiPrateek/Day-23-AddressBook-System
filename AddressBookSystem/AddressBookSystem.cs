@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using CsvHelper;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -162,6 +164,39 @@ namespace AddressBookSystem
                 //Reading the user data from JSON file
                 string json = sr.ReadToEnd();
                 var result = serializer.Deserialize(Read);
+            }
+        }
+        //Write the Persons contact in AddtressBook to CSV File.
+        public static void WriteContactInAddressbookintoCSVFile() 
+        {
+            string path = @"D:\LFP 158\Assignment\Day 23\AddressBookSystem\AddressBookSystem\AddressBook.csv";
+
+            Console.WriteLine("********* Writing to CSV File **********");
+
+            //Writing the User data in to CSV file
+            using (StreamWriter sw = new StreamWriter(path))
+            using (CsvWriter csvWrite = new CsvWriter(sw, CultureInfo.InvariantCulture))
+            {
+                csvWrite.WriteRecords(AddressBookcontact);
+            }
+            using (StreamReader sr = new StreamReader(path))
+            using (CsvReader csvRead = new CsvReader(sr, CultureInfo.InvariantCulture))
+            {
+                //Reading the user data from CSV file
+                var result = csvRead.GetRecords<AddressBookModel>().ToList();
+                foreach (AddressBookModel person in AddressBookcontact)
+                {
+                    Console.WriteLine("\nFirst Name : " + person.FirstName +
+                        "\nLast Name : " + person.LastName +
+                        "\nAddress : " + person.Address +
+                        "\nCity : " + person.City +
+                        "\nState : " + person.State +
+                        "\nZip Code: " + person.ZipCode +
+                        "\nMobile Number : " + person.MobileNumber +
+                        "\nEmail : " + person.Email +
+                        "\nAddress Book Name :" + person.AddressBookName +
+                        "\nAddress Book ID :" + person.AddressBookID);
+                }
             }
         }
     }

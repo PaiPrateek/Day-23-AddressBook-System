@@ -46,6 +46,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nEnter 23 to Retrieve Number Contacts in AddressBok by State");
                 Console.WriteLine("\nEnter 24 to Add New Contact information in the address Book");
                 Console.WriteLine("\nEnter 25 to Export the Person details from AddressBook Database to JSON File");
+                Console.WriteLine("\nEnter 26 to Export the Person details from AddressBook Database to CSV File");
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -124,6 +125,9 @@ namespace AddressBookSystem
                         break;
                     case 25:
                         AddressBookSystem.WriteContactInAddressbookintoJSONFile(); //Write the Persons contact in AddtressBook to JSON File.
+                        break;
+                    case 26:
+                        AddressBookSystem.WriteContactInAddressbookintoCSVFile(); //Write the Persons contact in AddtressBook to CSV File.
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");
