@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -127,7 +129,7 @@ namespace AddressBookSystem
         }
 
         //Add New Contact information in the address Book
-        public static void AddNewContactInformationOfPersoninAddressBook() //UC20
+        public static void AddNewContactInformationOfPersoninAddressBook() 
         {
             var SQL = @$"INSERT INTO AddressBook Values ('Vishwanath','Naidu','Tirupathi','Tirupathi', 'Andra Padesh','517507','9913372185','vishwa@gmail.com', 'Vishwa', 3, '2020-06-06')";
             string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=Address_Book_Service;Integrated Security=True";
@@ -138,6 +140,29 @@ namespace AddressBookSystem
             Console.WriteLine(reader);
             Console.WriteLine("New contact added Successfully");
             Console.ReadKey();
+        }
+
+        //Write the Persons contact in AddtressBook to JSON File.
+        public static void WriteContactInAddressbookintoJSONFile()
+        {
+            string path = @"D:\LFP 158\Assignment\Day 23\AddressBookSystem\AddressBookSystem\AddressBook.json";
+
+            Console.WriteLine("********* Writing to JSON File **********");
+
+            //Writing the User data in to JSON file
+            JsonSerializer serializer = new JsonSerializer();
+            using (StreamWriter sw = new StreamWriter(path))
+            using (JsonWriter Write = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(Write, AddressBookcontact);
+            }
+            using (StreamReader sr = new StreamReader(path))
+            using (JsonReader Read = new JsonTextReader(sr))
+            {
+                //Reading the user data from JSON file
+                string json = sr.ReadToEnd();
+                var result = serializer.Deserialize(Read);
+            }
         }
     }
 }
