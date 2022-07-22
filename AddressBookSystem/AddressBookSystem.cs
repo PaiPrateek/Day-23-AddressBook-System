@@ -199,5 +199,31 @@ namespace AddressBookSystem
                 }
             }
         }
+
+        //Write the Persons contact in AddtressBook to Txt File.
+        public static void WriteContactInAddressbookintoTxtFile()
+        {
+            string path = @"D:\LFP 158\Assignment\Day 23\AddressBookSystem\AddressBookSystem\AddressBook.txt";
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                foreach (AddressBookModel person in AddressBookcontact)
+                {
+                    sw.WriteLine("\nFirst Name : " + person.FirstName +
+                        "\nLast Name : " + person.LastName +
+                        "\nAddress : " + person.Address +
+                        "\nCity : " + person.City +
+                        "\nState : " + person.State +
+                        "\nZip Code: " + person.ZipCode +
+                        "\nMobile Number : " + person.MobileNumber +
+                        "\nEmail : " + person.Email +
+                        "\nAddress Book Name :" + person.AddressBookName +
+                        "\nAddress Book ID :" + person.AddressBookID);
+                }
+                sw.Close();
+                Console.WriteLine(File.ReadAllText(path));
+                Console.WriteLine("Person details are successfully Exported to Text File");
+                Console.ReadKey();
+            }
+        }
     }
 }

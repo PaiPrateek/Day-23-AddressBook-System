@@ -362,10 +362,10 @@ namespace AddressBookSystem
                         "Zip Code: " + person.ZipCode + "\n" +
                         "Mobile Number : " + person.MobileNumber + "\n" +
                         "Email : " + person.Email);
-                    sw.Close();
-                    Console.WriteLine(File.ReadAllText(path));
-                    Console.WriteLine("Person details are successfully Exported to Text File");
                 }
+                sw.Close();
+                Console.WriteLine(File.ReadAllText(path));
+                Console.WriteLine("Person details are successfully Exported to Text File");
                 Console.ReadKey();
             }
         }
