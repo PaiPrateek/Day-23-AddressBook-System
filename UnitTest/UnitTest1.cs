@@ -12,12 +12,12 @@ namespace UnitTest
 {
     public class Tests
     {
-        RestClient client;
+
 
         [SetUp]
         public void Setup()
         {
-            client = new RestClient("http://localhost:3000");
+           
         }
 
         //Add multipmle contacts to addressBook
