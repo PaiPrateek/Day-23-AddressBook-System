@@ -12,12 +12,20 @@ namespace UnitTest
 {
     public class Tests
     {
+<<<<<<< HEAD
 
+=======
+        RestClient client;
+>>>>>>> UC22
 
         [SetUp]
         public void Setup()
         {
+<<<<<<< HEAD
            
+=======
+            client = new RestClient("http://localhost:3000");
+>>>>>>> UC22
         }
 
         //Add multipmle contacts to addressBook
@@ -42,6 +50,34 @@ namespace UnitTest
             
         }
 
+<<<<<<< HEAD
+=======
+        //Read entries of AddressBook 
+        [Test]
+        public void onCallGetAdddressBookList()
+        {
+            RestRequest request = new RestRequest("/addressbook ", Method.Get);
+            RestResponse response = client.Execute(request);
+
+            Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.OK);
+            List<AddressBookModel> dataResponse = JsonConvert.DeserializeObject<List<AddressBookModel>>(response.Content);
+            Assert.AreEqual(7, dataResponse.Count);
+
+            foreach (AddressBookModel model in dataResponse)
+            {
+                System.Console.WriteLine("\nid :" + model.id +
+                                        "\nFirst Name : " + model.FirstName +
+                                        "\nLast Name : " + model.LastName +
+                                        "\nAddress : " + model.Address +
+                                        "\nCity : " + model.City +
+                                        "\nState: " + model.State +
+                                        "\nZip Code :" + model.ZipCode +
+                                        "\nMobile Number : " + model.MobileNumber +
+                                        "\nE-Mail : " + model.Email +
+                                        "\nAddressBook Name : " + model.AddressBookName);
+            }
+        }
+>>>>>>> UC22
 
     }
 }
