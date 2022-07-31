@@ -1,0 +1,8 @@
+{
+    "/addressbook/list":"/addressbook",
+    "/addressbook/get/:AddressBookID":"/addressbook/:id",
+    "/addressbook/create/:id":"/addressbook",
+    "/addressbook/update/:id":"/addressbook/:id",
+    "/addressbook/delete/:id":"/addressbook/:id"
+
+}
