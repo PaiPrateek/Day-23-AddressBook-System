@@ -83,18 +83,6 @@
       "MobileNumber": "9913372185",
       "Email": "vishwa@gmail.com",
       "AddressBookName": "Vishwa"
-    },
-    {
-      "FirstName": "Sanath",
-      "LastName": "Kumar",
-      "Address": "Mangalore",
-      "City": "Mangalore",
-      "State": "Karnataka",
-      "ZipCode": 574204,
-      "MobileNumber": "8277562385",
-      "Email": "sanath@gmail.com",
-      "AddressBookName": "Sanath",
-      "id": 8
     }
   ]
 }
