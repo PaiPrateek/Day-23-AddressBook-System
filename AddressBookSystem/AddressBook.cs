@@ -24,6 +24,7 @@ namespace AddressBookSystem
         //Creating Dictionary to Store the list of Persons of Same State
         public static Dictionary<string, Contact> StateDetails = new Dictionary<string, Contact>();
         //public static Contact person = new Contact();
+        public  List<Contact> AddressBookDetails = new List<Contact>();
 
         //Creating the method for creating the contact
         public static void createContact()
@@ -422,6 +423,23 @@ namespace AddressBookSystem
                 string json = sr.ReadToEnd();
                 var result  = jsonSerializer.Deserialize(Read);
             }
+        }
+
+        //add Multiple Contact to the AddessBook
+        public static void AddMultipleContactToAddressBook(List<AddressBookModel> AddressBookcontact)
+        {
+            AddressBookcontact.ForEach(addressBookdata =>
+            {
+                Task thread = new Task(() =>
+                {
+                    Console.WriteLine("Employee being added: " + addressBookdata.FirstName);
+                    AddressBookcontact.Add(addressBookdata);
+                    Console.WriteLine("Employee added: " + addressBookdata.FirstName);
+                });
+                thread.Start();
+
+            });
+            Console.WriteLine(AddressBookcontact.ToString());
         }
     }
 }

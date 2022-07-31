@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace AddressBookSystem
 {
-    internal class AddressBookSystem
+    public class AddressBookSystem
     {
-        static List<AddressBookModel> AddressBookcontact = new List<AddressBookModel>();
+        public static List<AddressBookModel> AddressBookcontact = new List<AddressBookModel>();
 
         //Retrieve the employee payroll from  database
         public static void RetrieveEmployeePayrollFromDataBase() 
@@ -225,5 +225,8 @@ namespace AddressBookSystem
                 Console.ReadKey();
             }
         }
+
+
+
     }
 }
