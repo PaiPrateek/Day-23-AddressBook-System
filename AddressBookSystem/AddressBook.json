@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [{"FirstName":"Prateek","LastName":"Pai","Address":"Bangalore","City":"Bangalore","State":"Karnataka","ZipCode":560027,"MobileNumber":"8762265775","Email":"prateekpai@gmail.com","AddressBookName":"Self","AddressBookID":1},
 {"FirstName":"Prateeksha","LastName":"Pai","Address":"Dharwad","City":"Dharwad","State":"Karnataka","ZipCode":581336,"MobileNumber":"8945231256","Email":"prateeksha@gmail.com","AddressBookName":"Prateeksha","AddressBookID":2},
 {"FirstName":"Vasanth","LastName":"Pai","Address":"Sirsi","City":"Sirsi","State":"Karnataka","ZipCode":581336,"MobileNumber":"9482615957","Email":"vasanthpai@gmail.com","AddressBookName":"Vasanth","AddressBookID":1},
@@ -21,3 +22,105 @@
 }
 >>>>>>> Stashed changes
 >>>>>>> UC22
+=======
+{
+  "addressbook": [
+    {
+      "id": 1,
+      "FirstName": "Prateek",
+      "LastName": "Pai",
+      "Address": "Bangalore",
+      "City": "Bangalore",
+      "State": "Karnataka",
+      "ZipCode": 560027,
+      "MobileNumber": "8762265775",
+      "Email": "prateekpai@gmail.com",
+      "AddressBookName": "Self"
+    },
+    {
+      "id": 2,
+      "FirstName": "Prateeksha",
+      "LastName": "Pai",
+      "Address": "Dharwad",
+      "City": "Dharwad",
+      "State": "Karnataka",
+      "ZipCode": 581336,
+      "MobileNumber": "8945231256",
+      "Email": "prateeksha@gmail.com",
+      "AddressBookName": "Prateeksha"
+    },
+    {
+      "id": 3,
+      "FirstName": "Vasanth",
+      "LastName": "Pai",
+      "Address": "Sirsi",
+      "City": "Sirsi",
+      "State": "Karnataka",
+      "ZipCode": 581336,
+      "MobileNumber": "9482615957",
+      "Email": "vasanthpai@gmail.com",
+      "AddressBookName": "Vasanth"
+    },
+    {
+      "id": 4,
+      "FirstName": "Geetha",
+      "LastName": "Pai",
+      "Address": "Sirsi",
+      "City": "Sirsi",
+      "State": "Karnataka",
+      "ZipCode": 581336,
+      "MobileNumber": "6284519537",
+      "Email": "geethapai@gmail.com",
+      "AddressBookName": "Geetha"
+    },
+    {
+      "id": 5,
+      "FirstName": "Ramanath",
+      "LastName": "Pai",
+      "Address": "Kumata",
+      "City": "Kumta",
+      "State": "Karnataka",
+      "ZipCode": 581441,
+      "MobileNumber": "6824531296",
+      "Email": "ramanath@gmail.com",
+      "AddressBookName": "Ramu"
+    },
+    {
+      "id": 6,
+      "FirstName": "Akshay",
+      "LastName": "Kamath",
+      "Address": "Sagar",
+      "City": "Sagar",
+      "State": "Karnataka",
+      "ZipCode": 581477,
+      "MobileNumber": "9173842682",
+      "Email": "akshay@gmail.com",
+      "AddressBookName": "Akshay"
+    },
+    {
+      "id": 7,
+      "FirstName": "Vishwanath",
+      "LastName": "Naidu",
+      "Address": "Tirupathi",
+      "City": "Tirupathi",
+      "State": "Andra Padesh",
+      "ZipCode": 517507,
+      "MobileNumber": "9913372185",
+      "Email": "vishwa@gmail.com",
+      "AddressBookName": "Vishwa"
+    },
+    {
+      "id": 8,
+      "FirstName": "Sanath",
+      "LastName": "Kumar",
+      "Address": "Udupi",
+      "City": "Udupi",
+      "State": "Karnataka",
+      "ZipCode": 574204,
+      "MobileNumber": "8277562385",
+      "Email": "sanath@gmail.com",
+      "AddressBookName": "Sanath"
+    }
+  ]
+}
+>>>>>>> UC23

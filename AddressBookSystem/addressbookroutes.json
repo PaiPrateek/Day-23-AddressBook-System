@@ -1,8 +1,15 @@
 {
     "/addressbook/list":"/addressbook",
+<<<<<<< HEAD
     "/addressbook/get/:AddressBookID":"/addressbook/:AddressBookID",
     "/addressbook/create/:AddressBookID":"/addressbook",
     "/addressbook/update/:AddressBookID":"/addressbook/:AddressBookID",
     "/addressbook/delete/:AddressBookID":"/addressbook/:AddressBookID"
+=======
+    "/addressbook/get/:AddressBookID":"/addressbook/:id",
+    "/addressbook/create/:id":"/addressbook",
+    "/addressbook/update/:id":"/addressbook/:id",
+    "/addressbook/delete/:id":"/addressbook/:id"
+>>>>>>> UC23
 
 }

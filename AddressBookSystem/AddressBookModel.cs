@@ -17,6 +17,6 @@ namespace AddressBookSystem
         public string MobileNumber { get; set; }
         public string Email { get; set; }
         public string AddressBookName { get; set; }
-        public int AddressBookID { get; set; }
+        public int id { get; set; }
     }
 }
